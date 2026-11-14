@@ -6,6 +6,7 @@ import main
 client = TestClient(main.app)
 
 
+
 def fake_story():
     return main.GeminiStory(
         story="As a volunteer, I want a shift list, so that I know when to show up.",
@@ -23,7 +24,7 @@ def test_health_returns_ok():
 
     # Assert
     assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
+    assert response.json() == {"status": "nope"}
 
 
 def test_polish_falls_back_when_no_project(monkeypatch):
